@@ -56,7 +56,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{7F4CD652-C4CB-48EA-B48E-5C784E5ADD50}"
 	ProjectSection(SolutionItems) = preProject
 		sales_site.sql = sales_site.sql
-		..\..\..\..\Desktop\sales_site_diagram.png = ..\..\..\..\Desktop\sales_site_diagram.png
+		sales_site_diagram.png = sales_site_diagram.png
 	EndProjectSection
 EndProject
 Global
