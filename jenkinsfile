@@ -32,11 +32,6 @@ pipeline {
                     docker image build -t ${name_imagen}:${tag_imagen} -f ./SalesSite.Web/Dockerfile .
                     '''
                 }
-                                post{
-                        always{
-                        echo "${name_imagen}:${tag_imagen}"
-                        }
-                }
             }
         }
         stage('run'){
