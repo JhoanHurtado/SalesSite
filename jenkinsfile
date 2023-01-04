@@ -11,7 +11,7 @@ pipeline {
             DOCKER_EXIST = ''
         }
         stages{
-            stage('CheckOut'){
+            stage('Stop'){
                 when{
                     expression{
                         DOCKER_EXIST = sh(returnStdout: true, script: 'echo "$(docker ps -q --filter name=${name_final})"')
@@ -22,9 +22,6 @@ pipeline {
                     script{
                     if(DOCKER_EXIST != ''){
                         script{
-                          sh '''
-                              echo "ererrr  $name_final"
-                            ''' 
                             sh '''
                                 docker stop ${name_final}
                             '''
