@@ -1,5 +1,6 @@
 pipeline {
         agent any
+        stage('InitialConfig'){
     parameters {
             string(name: 'name_container', defaultValue: 'salessiteweb', description: 'nombre del contenedor')
             string(name: 'name_imagen', defaultValue: 'salessiteweb', description: 'nombre de la image')
@@ -8,6 +9,7 @@ pipeline {
         }
         environment{
             name_final = "${name_container}${tag_imagen}${puerto_imagen}"
+        }
         }
         stages{
             stage('CheckOut'){
