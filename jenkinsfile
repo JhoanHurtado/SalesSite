@@ -1,4 +1,4 @@
-﻿pipeline {
+pipeline {
     agent any
 parameters {
         string(name: 'name_container', defaultValue: 'SalesSiteWeb', description: 'nombre del contenedor')
