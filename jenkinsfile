@@ -29,7 +29,7 @@ pipeline {
             steps{
                 script{
                     sh '''
-                    docker image build -t ${name_imagen}:${tag_imagen} -f SalesSite.Web/
+                    docker image build SalesSite.Web/ -t ${name_imagen}:${tag_imagen}
                     '''
                 }
             }
