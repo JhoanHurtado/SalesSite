@@ -8,6 +8,7 @@ pipeline {
         }
         environment{
             name_final = "${name_container}${tag_imagen}${puerto_imagen}"
+            DOCKER_EXIST = ''
         }
         stages{
             stage('CheckOut'){
@@ -22,7 +23,7 @@ pipeline {
                     if(DOCKER_EXIST != ''){
                         script{
                           sh '''
-                                ${DOCKER_EXIST}
+                              ererrr  ${DOCKER_EXIST}
                             ''' 
                             sh '''
                                 docker stop ${name_final}
