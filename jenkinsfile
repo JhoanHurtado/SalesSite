@@ -1,8 +1,8 @@
 pipeline {
         agent any
     parameters {
-            string(name: 'name_container', defaultValue: 'SalesSiteWeb', description: 'nombre del contenedor')
-            string(name: 'name_imagen', defaultValue: 'SalesSiteWeb', description: 'nombre de la image')
+            string(name: 'name_container', defaultValue: 'salessiteweb', description: 'nombre del contenedor')
+            string(name: 'name_imagen', defaultValue: 'salessiteweb', description: 'nombre de la image')
             string(name: 'tag_imagen', defaultValue: 'latest', description: 'etiqueta de la imagen')
             string(name: 'puerto_imagen', defaultValue: '4550', description: 'puerto a publicar')
         }
