@@ -10,7 +10,7 @@ pipeline {
             name_final = "${name_container}${tag_imagen}${puerto_imagen}"
         }
         stages{
-            stage('stop/rm'){
+            stage('CheckOut'){
                 when{
                     expression{
                         DOCKER_EXIST = sh(returnStdout: true, script: 'echo "$(docker ps -q --filter name=${name_final})"')
@@ -25,7 +25,7 @@ pipeline {
                                 docker stop ${name_final}
                             '''
                             sh '''
-                                docker rm ${DOCKER_EXIST}
+                                docker rm -f ${DOCKER_EXIST}
                             '''
                          }
                     }
@@ -41,7 +41,7 @@ pipeline {
                 }
             }
         }
-        stage('run'){
+        stage('Deploy'){
             steps{
                 script{
                     sh'''
