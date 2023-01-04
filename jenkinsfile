@@ -18,7 +18,10 @@ parameters {
                 }
             }
             steps {
-                script stop ${name_final}
+                script{
+                    sh '''
+                        docker stop ${name_final}
+                    '''
             }
         }
     }
