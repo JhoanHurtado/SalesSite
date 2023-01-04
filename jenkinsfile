@@ -13,7 +13,7 @@ pipeline {
             stage('stop/rm'){
                 when{
                     expression{
-                        DOCKER_EXIST = sh(returnStdout: true, script: 'echo "$(docker ps --filter name=${name_final})"')
+                        DOCKER_EXIST = sh(returnStdout: true, script: 'echo "$(docker ps -q --filter name=${name_final})"')
                         return DOCKER_EXIST != ''
                     }
                 }
@@ -29,7 +29,7 @@ pipeline {
             steps{
                 script{
                     sh '''
-                    docker build SalesSite.Web/ -t ${name_imagen}:${tag_imagen}
+                    docker build ./SalesSite.Web/ -t ${name_imagen}:${tag_imagen}
                     '''
                 }
                                 post{
