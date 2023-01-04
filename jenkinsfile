@@ -29,8 +29,13 @@ pipeline {
             steps{
                 script{
                     sh '''
-                    docker image build -t ${name_imagen}:${tag_imagen} -f salestsite/SalesSite.Web/Dockerfile .
+                    docker build SalesSite.Web/ -t ${name_imagen}:${tag_imagen}
                     '''
+                }
+                                post{
+                        always{
+                        echo "${name_imagen}:${tag_imagen}"
+                        }
                 }
             }
         }
