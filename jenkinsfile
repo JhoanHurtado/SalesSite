@@ -23,13 +23,13 @@ pipeline {
                     if(DOCKER_EXIST != ''){
                         script{
                           sh '''
-                              echo "ererrr  $DOCKER_EXIST"
+                              echo "ererrr  $name_final"
                             ''' 
                             sh '''
                                 docker stop ${name_final}
                             '''
                             sh '''
-                                docker rm -f ${DOCKER_EXIST}
+                                docker rm -f ${name_final}
                             '''
                          }
                     }
